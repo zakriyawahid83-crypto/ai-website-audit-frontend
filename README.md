@@ -1,20 +1,87 @@
-# AI Website Audit
+# AI Website Audit & Optimization Platform
 
-A responsive, client-side website audit workspace built with React and Vite. The demo uses sample report data and simulates URL checks and audit progress locally; it does not call a backend.
+An AI-powered web application designed to analyze websites and identify opportunities to improve SEO, performance, accessibility, and overall user experience.
 
-## Run locally
+## 🚀 Features
 
-```sh
-npm install
-npm run dev
+- **Website SEO Audit** — Analyze page titles, meta descriptions, headings, and other SEO elements.
+- **Performance Analysis** — Identify potential website performance issues.
+- **Accessibility Checks** — Detect common accessibility problems.
+- **Website Content Analysis** — Review content quality and missing information.
+- **Interactive Dashboard** — View audit results and website insights.
+- **Audit Reports** — Review website audit findings and recommendations.
+- **Responsive Design** — Designed for desktop, tablet, and mobile devices.
+- **Authentication** — Login and registration interface.
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React.js, Vite, JavaScript, CSS
+- **Backend:** Python, FastAPI
+- **Database:** PostgreSQL (Supabase)
+- **Frontend Deployment:** Vercel
+- **Backend Deployment:** Railway
+
+## 📂 Project Structure
+
+```text
+ai-website-audit-frontend/
+├── public/
+├── src/
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
 ```
 
-Open the local URL printed by Vite. To create a production build, run `npm run build`.
-The API defaults to `http://127.0.0.1:8000`; set `VITE_API_BASE_URL` in a frontend `.env` file to use a different backend address.
+## ⚙️ Getting Started
 
-## Demo interactions
+### Prerequisites
 
-- Enter a public website URL to see debounced validation; private and internal addresses are rejected.
-- Toggle audit categories and run or cancel the simulated audit.
-- Filter report history, open report previews, compare sample reports, or retry a failed website.
-- Use the navigation drawer on small screens. All primary actions are keyboard accessible.
+- Node.js and npm
+- Git
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/zakriyawahid83-crypto/ai-website-audit-frontend.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd ai-website-audit-frontend
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the local URL displayed in your terminal.
+
+## 🌐 Deployment
+
+- **Frontend:** Vercel
+- **Backend API:** Railway
+- **Database:** Supabase PostgreSQL
+
+Configure the backend API URL using the appropriate environment variable for your project before deploying.
+
+## 👨‍💻 Author
+
+**Zakriya Wahid**
+
+GitHub: [@zakriyawahid83-crypto](https://github.com/zakriyawahid83-crypto)
+
+---
+
+*AI Website Audit & Optimization Platform — helping identify website issues and improve website quality.*
