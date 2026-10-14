@@ -1,9 +1,4 @@
-
-/* ==========================================
-   AuditAI Sidebar
-   White + Sky Blue Professional Theme
-   Layout preserved
-========================================== */
+/* Sidebar: Sky Blue + White Theme */
 
 :root {
   --sidebar-bg: #ffffff;
@@ -16,190 +11,109 @@
   --sidebar-border: #e1edf7;
 }
 
-/* Sidebar */
+/* Sidebar background */
 .app-sidebar {
-  background: var(--sidebar-bg);
-  border-right: 1px solid var(--sidebar-border);
-  color: var(--sidebar-text);
+  background: #ffffff;
+  color: #334155;
+  border-right: 1px solid #e1edf7;
 }
 
-/* Brand */
-.sidebar-brand-text h2 {
-  color: #0f2942;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-}
-
-.sidebar-brand-text p {
-  color: var(--sidebar-muted);
-}
-
+/* Logo */
 .sidebar-logo {
-  background: linear-gradient(135deg, #38bdf8, #0284c7);
+  background: #0ea5e9;
   color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgb(14 165 233 / 18%);
 }
 
-/* Workspace label */
-.sidebar-section-title {
-  color: #8ba0b2;
-  font-weight: 800;
-  letter-spacing: 1.4px;
-}
-
-/* Navigation */
-.sidebar-navigation {
-  gap: 7px;
-}
-
+/* Navigation items */
 .sidebar-item {
-  color: #64748b;
+  color: #475569;
   background: transparent;
-  border: 1px solid transparent;
-  border-radius: 11px;
-  font-weight: 600;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    border-color 0.2s ease;
 }
 
 .sidebar-item:hover {
-  color: var(--sidebar-blue-dark);
-  background: var(--sidebar-blue-pale);
-  border-color: #e0f2fe;
+  background: #f0f9ff;
+  color: #0284c7;
 }
 
+/* Active navigation item */
 .sidebar-item-active {
-  color: #0369a1;
-  background: var(--sidebar-blue-light);
-  border-color: #bae6fd;
-  font-weight: 700;
+  background: #e0f2fe;
+  color: #0284c7;
+  font-weight: 600;
 }
 
-.sidebar-item-icon {
-  color: inherit;
-}
-
+/* Active indicator */
 .sidebar-active-indicator {
-  background: var(--sidebar-blue);
-  border-radius: 5px 0 0 5px;
+  background: #0ea5e9;
 }
 
-/* Helpful audit card */
+/* Workspace title */
+.sidebar-section-title {
+  color: #7890a5;
+}
+
+/* Help card */
 .sidebar-help {
-  background: linear-gradient(145deg, #f0f9ff, #e0f2fe);
-  border: 1px solid #dbeafe;
-  border-radius: 15px;
+  background: #f0f9ff;
+  border: 1px solid #e0f2fe;
 }
 
 .sidebar-help-icon {
-  display: grid;
-  place-items: center;
-  color: var(--sidebar-blue-dark);
-  background: #ffffff;
-  border: 1px solid #bae6fd;
-  border-radius: 10px;
+  color: #0284c7;
 }
 
 .sidebar-help h3 {
-  color: #0f2942;
-  font-weight: 750;
+  color: #0f172a;
 }
 
 .sidebar-help p {
-  color: #647b8e;
-  line-height: 1.7;
+  color: #64748b;
 }
 
 /* Start audit button */
 .sidebar-audit-button {
+  background: #0ea5e9;
   color: #ffffff;
-  background: var(--sidebar-blue);
-  border: 1px solid var(--sidebar-blue);
-  border-radius: 9px;
-  font-weight: 700;
-  transition:
-    background 0.2s ease,
-    box-shadow 0.2s ease;
 }
 
 .sidebar-audit-button:hover {
-  color: #ffffff;
-  background: var(--sidebar-blue-dark);
-  border-color: var(--sidebar-blue-dark);
-  box-shadow: 0 4px 12px rgb(14 165 233 / 18%);
+  background: #0284c7;
 }
 
-/* Bottom status */
-.sidebar-bottom {
-  border-top: 1px solid #edf3f8;
-}
-
+/* Status */
 .sidebar-status {
-  color: #647b8e;
+  color: #64748b;
 }
 
 .sidebar-status-dot {
-  background: #22c55e;
-  box-shadow: 0 0 0 3px #dcfce7;
+  background: #0ea5e9;
 }
 
 /* Logout */
 .sidebar-logout {
   color: #64748b;
-  background: #ffffff;
-  border: 1px solid var(--sidebar-border);
-  border-radius: 10px;
-  font-weight: 600;
+  background: transparent;
 }
 
 .sidebar-logout:hover {
-  color: #dc2626;
-  background: #fff5f5;
-  border-color: #fecaca;
+  background: #f0f9ff;
+  color: #0284c7;
 }
 
 /* Mobile header */
 .mobile-sidebar-header {
   background: #ffffff;
-  border-bottom: 1px solid var(--sidebar-border);
+  border-bottom: 1px solid #e1edf7;
 }
 
+/* Mobile menu button */
 .mobile-menu-toggle {
-  color: #334155;
-  background: #ffffff;
-  border: 1px solid var(--sidebar-border);
-  border-radius: 10px;
-}
-
-.mobile-menu-toggle:hover {
-  color: var(--sidebar-blue-dark);
-  background: var(--sidebar-blue-pale);
-  border-color: #bae6fd;
+  color: #0284c7;
+  background: #f0f9ff;
+  border: 1px solid #e0f2fe;
 }
 
 /* Mobile overlay */
 .mobile-sidebar-overlay {
-  background: rgb(15 41 66 / 40%);
-}
-
-/* Keyboard focus */
-.sidebar-item:focus-visible,
-.sidebar-audit-button:focus-visible,
-.sidebar-logout:focus-visible,
-.mobile-menu-toggle:focus-visible {
-  outline: 3px solid rgb(14 165 233 / 35%);
-  outline-offset: 2px;
-}
-
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .sidebar-item,
-  .sidebar-audit-button,
-  .sidebar-logout,
-  .app-sidebar {
-    transition: none;
-  }
+  background: rgba(15, 23, 42, 0.4);
 }
