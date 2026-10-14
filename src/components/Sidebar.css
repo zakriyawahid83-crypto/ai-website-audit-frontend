@@ -1,4 +1,6 @@
-/* Sidebar: Sky Blue + White Theme */
+/* =========================================
+   AuditAI Sidebar — Sky Blue & White Theme
+   ========================================= */
 
 :root {
   --sidebar-bg: #ffffff;
@@ -11,23 +13,126 @@
   --sidebar-border: #e1edf7;
 }
 
-/* Sidebar background */
+/* Main sidebar */
 .app-sidebar {
-  background: #ffffff;
-  color: #334155;
-  border-right: 1px solid #e1edf7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 260px;
+  height: 100vh;
+  padding: 24px 18px 18px;
+
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  border-right: 1px solid var(--sidebar-border);
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  transition: transform 0.25s ease;
 }
 
-/* Logo */
+/* Brand */
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 5px;
+}
+
+.desktop-brand {
+  margin-bottom: 38px;
+}
+
+.mobile-brand {
+  margin: 0;
+}
+
 .sidebar-logo {
-  background: #0ea5e9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+
+  background: linear-gradient(135deg, #38bdf8, #0284c7);
   color: #ffffff;
+
+  font-size: 25px;
+  font-weight: 800;
+
+  box-shadow: 0 5px 14px rgba(14, 165, 233, 0.2);
 }
 
-/* Navigation items */
+.sidebar-brand-text h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+}
+
+.sidebar-brand-text p {
+  margin: 4px 0 0;
+  color: var(--sidebar-muted);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Section heading */
+.sidebar-section-title {
+  margin: 0 0 13px;
+  padding: 0 10px;
+
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1.5px;
+}
+
+/* Navigation */
+.sidebar-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
 .sidebar-item {
-  color: #475569;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  width: 100%;
+  min-height: 47px;
+  padding: 0 13px;
+
+  border: 1px solid transparent;
+  border-radius: 11px;
+
   background: transparent;
+  color: #64748b;
+
+  text-align: left;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 550;
+
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .sidebar-item:hover {
@@ -35,85 +140,340 @@
   color: #0284c7;
 }
 
-/* Active navigation item */
+.sidebar-item:focus-visible,
+.sidebar-logout:focus-visible,
+.sidebar-audit-button:focus-visible,
+.mobile-menu-toggle:focus-visible {
+  outline: 3px solid rgba(14, 165, 233, 0.35);
+  outline-offset: 3px;
+}
+
 .sidebar-item-active {
   background: #e0f2fe;
-  color: #0284c7;
-  font-weight: 600;
+  border-color: #bae6fd;
+  color: #0369a1;
+  font-weight: 700;
 }
 
-/* Active indicator */
-.sidebar-active-indicator {
-  background: #0ea5e9;
+.sidebar-item-active:hover {
+  background: #d6f0ff;
+  color: #0369a1;
 }
 
-/* Workspace title */
-.sidebar-section-title {
+/* Navigation icons */
+.sidebar-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 25px;
+  height: 25px;
+
+  border-radius: 7px;
   color: #7890a5;
+
+  font-size: 21px;
+  line-height: 1;
+}
+
+.sidebar-item-active .sidebar-item-icon {
+  color: #0284c7;
+}
+
+.sidebar-item:hover .sidebar-item-icon {
+  color: #0284c7;
+}
+
+/* Active item indicator */
+.sidebar-active-indicator {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  bottom: 10px;
+
+  width: 3px;
+  border-radius: 5px 0 0 5px;
+
+  background: #0ea5e9;
 }
 
 /* Help card */
 .sidebar-help {
-  background: #f0f9ff;
-  border: 1px solid #e0f2fe;
+  margin-top: auto;
+  margin-bottom: 20px;
+  padding: 17px 14px;
+
+  border: 1px solid #d9f0ff;
+  border-radius: 14px;
+
+  background: linear-gradient(145deg, #f0f9ff, #ffffff);
 }
 
 .sidebar-help-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+  margin-bottom: 13px;
+
+  border-radius: 10px;
+  background: #dff3ff;
   color: #0284c7;
+
+  font-size: 19px;
 }
 
 .sidebar-help h3 {
+  margin: 0 0 8px;
+
   color: #0f172a;
+  font-size: 13px;
+  font-weight: 750;
 }
 
 .sidebar-help p {
+  margin: 0 0 15px;
+
   color: #64748b;
+  font-size: 11px;
+  line-height: 1.7;
 }
 
 /* Start audit button */
 .sidebar-audit-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  width: 100%;
+  min-height: 39px;
+  padding: 0 12px;
+
+  border: none;
+  border-radius: 9px;
+
   background: #0ea5e9;
   color: #ffffff;
+
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .sidebar-audit-button:hover {
   background: #0284c7;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
 }
 
-/* Status */
+.sidebar-audit-button:active {
+  transform: scale(0.98);
+}
+
+/* Bottom section */
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  margin-top: 0;
+  padding-top: 16px;
+
+  border-top: 1px solid #edf3f8;
+}
+
 .sidebar-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 0 5px;
+
   color: #64748b;
+  font-size: 10px;
+  font-weight: 550;
 }
 
 .sidebar-status-dot {
+  flex-shrink: 0;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
   background: #0ea5e9;
+  box-shadow: 0 0 0 3px #e0f2fe;
 }
 
 /* Logout */
 .sidebar-logout {
-  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  min-height: 43px;
+  padding: 0 12px;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
   background: transparent;
+  color: #64748b;
+
+  text-align: left;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .sidebar-logout:hover {
   background: #f0f9ff;
+  border-color: #e0f2fe;
   color: #0284c7;
 }
 
 /* Mobile header */
 .mobile-sidebar-header {
-  background: #ffffff;
-  border-bottom: 1px solid #e1edf7;
+  display: none;
 }
 
 /* Mobile menu button */
 .mobile-menu-toggle {
-  color: #0284c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid #d9f0ff;
+  border-radius: 11px;
+
   background: #f0f9ff;
-  border: 1px solid #e0f2fe;
+  color: #0284c7;
+
+  font-size: 21px;
+  cursor: pointer;
 }
 
 /* Mobile overlay */
 .mobile-sidebar-overlay {
-  background: rgba(15, 23, 42, 0.4);
+  display: none;
+}
+
+/* Tablet and mobile */
+@media (max-width: 768px) {
+  .mobile-sidebar-header {
+    position: sticky;
+    top: 0;
+    z-index: 1001;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    width: 100%;
+    min-height: 72px;
+    padding: 12px 18px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #e1edf7;
+  }
+
+  .app-sidebar {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1003;
+
+    width: min(280px, 86vw);
+    height: 100dvh;
+    padding: 22px 16px;
+
+    transform: translateX(-105%);
+    visibility: hidden;
+    box-shadow: none;
+  }
+
+  .app-sidebar.sidebar-mobile-open {
+    transform: translateX(0);
+    visibility: visible;
+    box-shadow: 12px 0 35px rgba(15, 23, 42, 0.12);
+  }
+
+  .desktop-brand {
+    margin-bottom: 32px;
+  }
+
+  .mobile-sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1002;
+
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    padding: 0;
+    border: none;
+
+    background: rgba(15, 23, 42, 0.42);
+    cursor: pointer;
+  }
+
+  .sidebar-help {
+    margin-top: auto;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 380px) {
+  .mobile-sidebar-header {
+    min-height: 64px;
+    padding: 10px 12px;
+  }
+
+  .sidebar-logo {
+    width: 39px;
+    height: 39px;
+    border-radius: 11px;
+    font-size: 22px;
+  }
+
+  .sidebar-brand-text h2 {
+    font-size: 18px;
+  }
+
+  .sidebar-brand-text p {
+    font-size: 10px;
+  }
+
+  .mobile-menu-toggle {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .app-sidebar,
+  .sidebar-item,
+  .sidebar-audit-button,
+  .sidebar-logout {
+    transition: none;
+  }
 }
